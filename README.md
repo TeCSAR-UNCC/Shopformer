@@ -55,11 +55,7 @@ Stage 1: Train the tokenizer
 
 
 Stage 2: Freeze the encoder and train transformer:
-python3 main_to.py \
-  --dataset Poselift \
-  --model_optimizer adam \
-  --mask_root ... \
-  --seed 4423374970896992228 \
+python3 main_to.py --dataset Poselift --model_optimizer adam --mask_root ... --seed 4423374970896992228 \
   --seg_len 24 \
   --seg_stride 12 \
   --num_kp 18 \
