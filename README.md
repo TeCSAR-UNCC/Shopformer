@@ -48,7 +48,7 @@ DATA/
 ## Installation
 conda env create -f environment.yml
 
-conda activate shopformer
+conda activate Shopformer
 
  ## Training
 Stage 1: Train the tokenizer 
