@@ -16,3 +16,58 @@ The following figure illustrates the overall architecture of the Shopformer mode
   <img src="Images/Shopformer.png" alt="Shopformer Architecture" width="1300"/>
   <figcaption><sub><b>Figure 1:</b> Overview of the Shopformer architecture. The framework operates in two stages: (1) a Graph Convolutional Autoencoder is first trained on pose sequences to learn rich spatio-temporal representations; (2) the pretrained encoder is then repurposed as a tokenizer module, generating compact tokens from input pose data. These tokens are passed through a transformer encoder-decoder module, which reconstructs the input sequence. The reconstruction error (MSE loss) is used to compute the normality score for shoplifting detection.</figcaption>
   </sub></figure>
+
+
+  ## Project Structure
+
+- `models/` – GCAE tokenizer & transformer model
+- `scripts/` – training and evaluation scripts
+- `data/` – instructions and expected format for PoseLift dataset
+- `config/` – training configurations
+- `utils/` – metric calculations, pose preprocessing
+
+## Dataset
+This model is trained on the PoseLift dataset. You can access to the dataset nad related documentation here: 
+ [PoseLift GitHub Repository](https://github.com/TeCSAR-UNCC/PoseLift)
+
+## Installation
+conda env create -f environment.yml
+
+conda activate shopformer
+
+ ## Training
+Stage 1: Train the tokenizer 
+
+
+Stage 2: Freeze the encoder and train transformer:
+
+
+## Results
+Shopformer generates 2 tokens per pose sequence, as this setup achieved the best trade-off between accuracy and computational efficiency during ablation studies. Each token has an embedding size of 144, encoded using 8 channels over 18 keypoints. For detailed results comparing token counts ranging from 2 to 12, please refer to the ablation study section in the [paper](https://arxiv.org/abs/2504.19970).
+
+
+
+<sub> Table 1: AUC-ROC, AUC-PR, and EER of Shopformer compared with state-of-the-art pose-based anomaly detection models on the PoseLift dataset.
+| Methods          | AUC-ROC | AUC-PR| EER |
+|------------------|---------|-------|-----|
+| STG-NF         |    67.46   | 84.06        | 0.39   |
+|TSGAD           |   63.35    |  39.31       | 0.41    |
+| GEPC          |   60.61    |  50.38       | 0.38  |
+|Shopformer    |  69.15  | 44.49 | 0.38 |
+
+
+
+## Citation
+If you find our work useful, please consider citing: 
+
+```bibetex
+@article{rashvand2025shopformer,
+  title={Shopformer: Transformer-Based Framework for Detecting Shoplifting via Human Pose},
+  author={Rashvand, Narges and Noghre, Ghazal Alinezhad and Pazho, Armin Danesh and Ardabili, Babak Rahimi and Tabkhi, Hamed},
+  journal={arXiv preprint arXiv:2504.19970},
+  year={2025}
+}
+```
+
+## Contact
+If you have any questions or need assistance, please contact the authors at nrashvan@charlotte.edu.
