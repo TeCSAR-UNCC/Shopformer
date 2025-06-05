@@ -55,6 +55,24 @@ Stage 1: Train the tokenizer
 
 
 Stage 2: Freeze the encoder and train transformer:
+python3 main_to.py \
+  --dataset Poselift \
+  --model_optimizer adam \
+  --mask_root ... \
+  --seed 4423374970896992228 \
+  --seg_len 24 \
+  --seg_stride 12 \
+  --num_kp 18 \
+  --model_num_heads 12 \
+  --model_num_layers 4 \
+  --epochs 10 \
+  --dropout 0.1 \
+  --model_lr 5e-05 \
+  --device cuda:2 \
+  --model_save_dir ... \
+  --model_loss mse \
+  --token_config graph \
+  --model_latent_dim 64
 
 
 ## Results
