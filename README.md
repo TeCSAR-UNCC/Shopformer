@@ -36,7 +36,7 @@ DATA/
 └── Poselift/
     ├── gt/
     │   └── test_frame_mask/
-    │       └── (test set frame-level binary mask files indicating normal or anomalous behavior)
+    │       └── (test set frame-level binary mask files indicating normal or shoplifting behavior)
     └── pose/
         ├── train/
         │   └── (training pose JSON files)
