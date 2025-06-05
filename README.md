@@ -32,16 +32,7 @@ This model is trained on the PoseLift dataset. You can access to the dataset nad
 
  After downloading the dataset, organize the files into the following directory structure: 
  
- DATA/
-└── Poselift/
-    ├── gt/
-    │   └── test_frame_mask/
-    │       └── (test set frame-level binary mask files indicating normal or anomalous behavior)
-    └── pose/
-        ├── train/
-        │   └── (training pose JSON files)
-        └── test/
-            └── (test pose JSON files)
+<pre> After downloading the dataset, organize the files into the following directory structure: ``` DATA/ └── Poselift/ ├── gt/ │ └── test_frame_mask/ │ └── (test set frame-level binary mask files indicating normal or anomalous behavior) └── pose/ ├── train/ │ └── (training pose JSON files) └── test/ └── (test pose JSON files) ``` </pre>
 
 ## Installation
 conda env create -f environment.yml
